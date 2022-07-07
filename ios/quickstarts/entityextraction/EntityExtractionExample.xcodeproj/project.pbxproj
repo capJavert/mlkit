@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,8 +12,10 @@
 		108489B3224415A4004D37A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 108489B2224415A4004D37A8 /* main.m */; };
 		108489F8224531B9004D37A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1E8DDC822259E3400536A5C /* Main.storyboard */; };
 		108489F9224531BF004D37A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1E8DDCD22259E3500536A5C /* LaunchScreen.storyboard */; };
+		404AB6F31D95C2DAF9ADEEDA /* Pods_EntityExtractionExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73502CCD1A48C6AD67F70772 /* Pods_EntityExtractionExample.framework */; };
 		408FD251248AB72A00CA5C9D /* EntityExtractionModelIdentifierExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408FD250248AB72A00CA5C9D /* EntityExtractionModelIdentifierExtensions.swift */; };
 		408FD254248AB84300CA5C9D /* MLKEntityExtractionModelIdentifier+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 408FD253248AB84300CA5C9D /* MLKEntityExtractionModelIdentifier+Extensions.m */; };
+		535E527E122362365ED32B2A /* Pods_EntityExtractionExampleObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2E3CED3002B69BD876F019 /* Pods_EntityExtractionExampleObjC.framework */; };
 		6191C8FE2471A84200E09CDE /* ModelManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6191C8FC2471A84200E09CDE /* ModelManagementViewController.m */; };
 		61B47298247FC34B00923C2C /* ModelManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B47297247FC34A00923C2C /* ModelManagementViewController.swift */; };
 		C18E1D3722410D0E00B5F51C /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C18E1D3622410D0E00B5F51C /* libc++.tbd */; };
@@ -32,12 +34,17 @@
 		108489A6224415A1004D37A8 /* EntityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EntityViewController.h; sourceTree = "<group>"; };
 		108489A7224415A1004D37A8 /* EntityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EntityViewController.m; sourceTree = "<group>"; };
 		108489B2224415A4004D37A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		18FA89C6AAFB9A05174DCA20 /* Pods-EntityExtractionExampleObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EntityExtractionExampleObjC.debug.xcconfig"; path = "Target Support Files/Pods-EntityExtractionExampleObjC/Pods-EntityExtractionExampleObjC.debug.xcconfig"; sourceTree = "<group>"; };
+		3D668BEF1BB7088B6D9BF7EF /* Pods-EntityExtractionExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EntityExtractionExample.debug.xcconfig"; path = "Target Support Files/Pods-EntityExtractionExample/Pods-EntityExtractionExample.debug.xcconfig"; sourceTree = "<group>"; };
+		3EE61B64A1C723DFF64F1066 /* Pods-EntityExtractionExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EntityExtractionExample.release.xcconfig"; path = "Target Support Files/Pods-EntityExtractionExample/Pods-EntityExtractionExample.release.xcconfig"; sourceTree = "<group>"; };
 		408FD250248AB72A00CA5C9D /* EntityExtractionModelIdentifierExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityExtractionModelIdentifierExtensions.swift; sourceTree = "<group>"; };
 		408FD252248AB84300CA5C9D /* MLKEntityExtractionModelIdentifier+Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MLKEntityExtractionModelIdentifier+Extensions.h"; sourceTree = "<group>"; };
 		408FD253248AB84300CA5C9D /* MLKEntityExtractionModelIdentifier+Extensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MLKEntityExtractionModelIdentifier+Extensions.m"; sourceTree = "<group>"; };
 		6191C8FC2471A84200E09CDE /* ModelManagementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelManagementViewController.m; sourceTree = "<group>"; };
 		6191C8FD2471A84200E09CDE /* ModelManagementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelManagementViewController.h; sourceTree = "<group>"; };
 		61B47297247FC34A00923C2C /* ModelManagementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelManagementViewController.swift; sourceTree = "<group>"; };
+		73502CCD1A48C6AD67F70772 /* Pods_EntityExtractionExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EntityExtractionExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82F4972034DEFFF3C2046E81 /* Pods-EntityExtractionExampleObjC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EntityExtractionExampleObjC.release.xcconfig"; path = "Target Support Files/Pods-EntityExtractionExampleObjC/Pods-EntityExtractionExampleObjC.release.xcconfig"; sourceTree = "<group>"; };
 		C18E1D3622410D0E00B5F51C /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		C1E8DDC122259E3400536A5C /* EntityExtractionExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EntityExtractionExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1E8DDC422259E3400536A5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +52,7 @@
 		C1E8DDC922259E3400536A5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C1E8DDCE22259E3500536A5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1E8DDD022259E3500536A5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC2E3CED3002B69BD876F019 /* Pods_EntityExtractionExampleObjC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EntityExtractionExampleObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1278562748201D00863E4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				535E527E122362365ED32B2A /* Pods_EntityExtractionExampleObjC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C18E1D3722410D0E00B5F51C /* libc++.tbd in Frameworks */,
+				404AB6F31D95C2DAF9ADEEDA /* Pods_EntityExtractionExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				C18E1D3622410D0E00B5F51C /* libc++.tbd */,
+				73502CCD1A48C6AD67F70772 /* Pods_EntityExtractionExample.framework */,
+				DC2E3CED3002B69BD876F019 /* Pods_EntityExtractionExampleObjC.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -129,6 +141,10 @@
 		E7C45F3A2FC5CB6A04E2E3FF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				3D668BEF1BB7088B6D9BF7EF /* Pods-EntityExtractionExample.debug.xcconfig */,
+				3EE61B64A1C723DFF64F1066 /* Pods-EntityExtractionExample.release.xcconfig */,
+				18FA89C6AAFB9A05174DCA20 /* Pods-EntityExtractionExampleObjC.debug.xcconfig */,
+				82F4972034DEFFF3C2046E81 /* Pods-EntityExtractionExampleObjC.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -140,9 +156,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 108489D0224415A5004D37A8 /* Build configuration list for PBXNativeTarget "EntityExtractionExampleObjC" */;
 			buildPhases = (
+				616B1FFEF0B4F7AC37E83320 /* [CP] Check Pods Manifest.lock */,
 				1084899D224415A1004D37A8 /* Sources */,
 				1084899E224415A1004D37A8 /* Frameworks */,
 				1084899F224415A1004D37A8 /* Resources */,
+				C6DECA39C03660351476B265 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -157,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1E8DDD322259E3500536A5C /* Build configuration list for PBXNativeTarget "EntityExtractionExample" */;
 			buildPhases = (
+				56D0495AFAF9F03D6D6EB91A /* [CP] Check Pods Manifest.lock */,
 				C1E8DDBD22259E3400536A5C /* Sources */,
 				C1E8DDBE22259E3400536A5C /* Frameworks */,
 				C1E8DDBF22259E3400536A5C /* Resources */,
+				FDFF262B81BB4C09C4FEE82F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -231,6 +251,87 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		56D0495AFAF9F03D6D6EB91A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EntityExtractionExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		616B1FFEF0B4F7AC37E83320 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EntityExtractionExampleObjC-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6DECA39C03660351476B265 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EntityExtractionExampleObjC/Pods-EntityExtractionExampleObjC-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EntityExtractionExampleObjC/Pods-EntityExtractionExampleObjC-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EntityExtractionExampleObjC/Pods-EntityExtractionExampleObjC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FDFF262B81BB4C09C4FEE82F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EntityExtractionExample/Pods-EntityExtractionExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EntityExtractionExample/Pods-EntityExtractionExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EntityExtractionExample/Pods-EntityExtractionExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1084899D224415A1004D37A8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -279,6 +380,7 @@
 /* Begin XCBuildConfiguration section */
 		108489CA224415A5004D37A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18FA89C6AAFB9A05174DCA20 /* Pods-EntityExtractionExampleObjC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -299,6 +401,7 @@
 		};
 		108489CB224415A5004D37A8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82F4972034DEFFF3C2046E81 /* Pods-EntityExtractionExampleObjC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -435,11 +538,12 @@
 		};
 		C1E8DDD422259E3500536A5C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D668BEF1BB7088B6D9BF7EF /* Pods-EntityExtractionExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WWXTYLGB6N;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/EntityExtractionExample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -459,11 +563,12 @@
 		};
 		C1E8DDD522259E3500536A5C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EE61B64A1C723DFF64F1066 /* Pods-EntityExtractionExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WWXTYLGB6N;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/EntityExtractionExample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

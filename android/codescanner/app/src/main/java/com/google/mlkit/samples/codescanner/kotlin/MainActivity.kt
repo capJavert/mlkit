@@ -19,58 +19,31 @@ package com.google.mlkit.samples.codescanner.kotlin
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.View
-import android.widget.CheckBox
 import android.widget.TextView
 import com.google.mlkit.common.MlKitException
 import com.google.mlkit.samples.codescanner.R
 import com.google.mlkit.vision.barcode.common.Barcode
-import com.google.mlkit.vision.codescanner.GmsBarcodeScannerOptions
 import com.google.mlkit.vision.codescanner.GmsBarcodeScanning
 import java.util.Locale
 
 /** Demonstrates the code scanner powered by Google Play Services. */
 class MainActivity : AppCompatActivity() {
 
-  private var allowManualInput = false
-  private var barcodeResultView: TextView? = null
-
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
-    barcodeResultView = findViewById(R.id.barcode_result_view)
-  }
-
-  fun onAllowManualInputCheckboxClicked(view: View) {
-    allowManualInput = (view as CheckBox).isChecked
-  }
-
-  fun onScanButtonClicked(view: View) {
-    val optionsBuilder = GmsBarcodeScannerOptions.Builder()
-    if (allowManualInput) {
-      optionsBuilder.allowManualInput()
+    val barcodeResultView = findViewById<TextView>(R.id.barcode_result_view)
+    findViewById<View>(R.id.scan_barcode_button).setOnClickListener {
+      val gmsBarcodeScanner = GmsBarcodeScanning.getClient(this)
+      gmsBarcodeScanner
+        .startScan()
+        .addOnSuccessListener { barcode: Barcode ->
+          barcodeResultView.text = getSuccessfulMessage(barcode)
+        }
+        .addOnFailureListener { e: Exception ->
+          barcodeResultView.text = getErrorMessage(e as MlKitException)
+        }
     }
-    val gmsBarcodeScanner = GmsBarcodeScanning.getClient(this, optionsBuilder.build())
-    gmsBarcodeScanner
-      .startScan()
-      .addOnSuccessListener { barcode: Barcode ->
-        barcodeResultView!!.text = getSuccessfulMessage(barcode)
-      }
-      .addOnFailureListener { e: Exception ->
-        barcodeResultView!!.text = getErrorMessage(e as MlKitException)
-      }
-      .addOnCanceledListener {
-        barcodeResultView!!.text = getString(R.string.error_scanner_cancelled)
-      }
-  }
-
-  override fun onSaveInstanceState(savedInstanceState: Bundle) {
-    savedInstanceState.putBoolean(KEY_ALLOW_MANUAL_INPUT, allowManualInput)
-    super.onSaveInstanceState(savedInstanceState)
-  }
-
-  override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-    super.onRestoreInstanceState(savedInstanceState)
-    allowManualInput = savedInstanceState.getBoolean(KEY_ALLOW_MANUAL_INPUT)
   }
 
   private fun getSuccessfulMessage(barcode: Barcode): String {
@@ -88,15 +61,12 @@ class MainActivity : AppCompatActivity() {
 
   private fun getErrorMessage(e: MlKitException): String {
     return when (e.errorCode) {
+      MlKitException.CODE_SCANNER_CANCELLED -> getString(R.string.error_scanner_cancelled)
       MlKitException.CODE_SCANNER_CAMERA_PERMISSION_NOT_GRANTED ->
         getString(R.string.error_camera_permission_not_granted)
       MlKitException.CODE_SCANNER_APP_NAME_UNAVAILABLE ->
         getString(R.string.error_app_name_unavailable)
       else -> getString(R.string.error_default_message, e)
     }
-  }
-
-  companion object {
-    private const val KEY_ALLOW_MANUAL_INPUT = "allow_manual_input"
   }
 }

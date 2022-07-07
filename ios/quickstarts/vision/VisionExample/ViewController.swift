@@ -129,8 +129,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
       switch rowIndex {
       case .detectFaceOnDevice:
         detectFaces(image: imageView.image)
-      case .detectTextOnDevice, .detectTextChineseOnDevice, .detectTextDevanagariOnDevice,
-        .detectTextJapaneseOnDevice, .detectTextKoreanOnDevice:
+      case .detectTextOnDevice:
         detectTextOnDevice(
           image: imageView.image, detectorType: rowIndex)
       case .detectBarcodeOnDevice:
@@ -791,7 +790,7 @@ extension ViewController {
       imageView.image = maskedImage
 
       strongSelf.annotationOverlayView.addSubview(imageView)
-      strongSelf.resultsText = "Segmentation Succeeded"
+      strongSelf.resultsText = "Segmentation succeeded"
       strongSelf.showResults()
     }
   }
@@ -966,17 +965,7 @@ extension ViewController {
 
     // [START init_text]
     var options: CommonTextRecognizerOptions
-    if detectorType == .detectTextChineseOnDevice {
-      options = ChineseTextRecognizerOptions.init()
-    } else if detectorType == .detectTextDevanagariOnDevice {
-      options = DevanagariTextRecognizerOptions.init()
-    } else if detectorType == .detectTextJapaneseOnDevice {
-      options = JapaneseTextRecognizerOptions.init()
-    } else if detectorType == .detectTextKoreanOnDevice {
-      options = KoreanTextRecognizerOptions.init()
-    } else {
-      options = TextRecognizerOptions.init()
-    }
+    options = TextRecognizerOptions.init()
 
     let onDeviceTextRecognizer = TextRecognizer.textRecognizer(options: options)
     // [END init_text]
@@ -1104,15 +1093,11 @@ extension ViewController {
 // MARK: - Enums
 
 private enum DetectorPickerRow: Int {
-  case detectFaceOnDevice = 0
+  case detectBarcodeOnDevice = 0
 
   case
+    detectFaceOnDevice,
     detectTextOnDevice,
-    detectTextChineseOnDevice,
-    detectTextDevanagariOnDevice,
-    detectTextJapaneseOnDevice,
-    detectTextKoreanOnDevice,
-    detectBarcodeOnDevice,
     detectImageLabelsOnDevice,
     detectImageLabelsCustomOnDevice,
     detectObjectsProminentNoClassifier,
@@ -1136,14 +1121,6 @@ private enum DetectorPickerRow: Int {
       return "Face Detection"
     case .detectTextOnDevice:
       return "Text Recognition"
-    case .detectTextChineseOnDevice:
-      return "Text Recognition Chinese"
-    case .detectTextDevanagariOnDevice:
-      return "Text Recognition Devanagari"
-    case .detectTextJapaneseOnDevice:
-      return "Text Recognition Japanese"
-    case .detectTextKoreanOnDevice:
-      return "Text Recognition Korean"
     case .detectBarcodeOnDevice:
       return "Barcode Scanning"
     case .detectImageLabelsOnDevice:
@@ -1178,10 +1155,7 @@ private enum DetectorPickerRow: Int {
 
 private enum Constants {
   static let images = [
-    "grace_hopper.jpg", "image_has_text.jpg", "chinese_sparse.png", "chinese.png",
-    "devanagari_sparse.png", "devanagari.png", "japanese_sparse.png", "japanese.png",
-    "korean_sparse.png", "korean.png", "barcode_128.png", "qr_code.jpg", "beach.jpg", "liberty.jpg",
-    "bird.jpg",
+    "liberty.jpg", "bird.jpg", "image_has_text.jpg", "chinese_sparse.png", "devanagari_sparse.png", "japanese_sparse.png", "korean_sparse.png", "barcode_128.png", "qr_code.jpg", "beach.jpg",
   ]
 
   static let detectionNoResultsMessage = "No results returned."

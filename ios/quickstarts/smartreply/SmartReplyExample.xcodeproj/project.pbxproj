@@ -15,6 +15,7 @@
 		109172A022067F750059D03D /* UITextViewPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C558821F7958B00908FF7 /* UITextViewPlaceholder.swift */; };
 		109172A122067F7A0059D03D /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108F913D21FB8F1A0069ADDA /* DateExtension.swift */; };
 		10B054031C6A3C630061077D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B054011C6A3C630061077D /* Main.storyboard */; };
+		38D17A83586B27CF2AFD5E43 /* Pods_SmartReplyExampleObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2BCF3A108F88A5A5A3D64D6 /* Pods_SmartReplyExampleObjC.framework */; };
 		40B95AC224616FAD007AED02 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40B95AC124616FAD007AED02 /* LaunchScreen.xib */; };
 		40B95AC324616FAD007AED02 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40B95AC124616FAD007AED02 /* LaunchScreen.xib */; };
 		40B95AC5246179AA007AED02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40B95AC4246179A9007AED02 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		5F5A53521ADE670C00F81DF0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A53511ADE670C00F81DF0 /* main.m */; };
 		5F5A53551ADE670C00F81DF0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A53541ADE670C00F81DF0 /* AppDelegate.m */; };
 		5F5A537E1ADE67D500F81DF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5A537D1ADE67D500F81DF0 /* AppDelegate.swift */; };
+		EA8D09E3DB3C0115CBE60ACC /* Pods_SmartReplyExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18135AE308331315EA976309 /* Pods_SmartReplyExample.framework */; };
 		EF4857041C752B7700649485 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B054011C6A3C630061077D /* Main.storyboard */; };
 		EF6DB4CD1CDD60F700319C08 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6DB4CA1CDD60F700319C08 /* MainViewController.swift */; };
 		EF6DB4D61CDD610200319C08 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6DB4D01CDD610200319C08 /* MainViewController.m */; };
@@ -68,6 +70,9 @@
 		1091729D2206767C0059D03D /* NSDate+Format.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Format.h"; sourceTree = "<group>"; };
 		1091729E2206767C0059D03D /* NSDate+Format.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Format.m"; sourceTree = "<group>"; };
 		10B054021C6A3C630061077D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18135AE308331315EA976309 /* Pods_SmartReplyExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartReplyExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1857C48FD965DFDFD8C34A2A /* Pods-SmartReplyExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartReplyExample.debug.xcconfig"; path = "Target Support Files/Pods-SmartReplyExample/Pods-SmartReplyExample.debug.xcconfig"; sourceTree = "<group>"; };
+		338395679CAA75E997AD7434 /* Pods-SmartReplyExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartReplyExample.release.xcconfig"; path = "Target Support Files/Pods-SmartReplyExample/Pods-SmartReplyExample.release.xcconfig"; sourceTree = "<group>"; };
 		40B95AC124616FAD007AED02 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = SmartReplyExampleObjC/LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
 		40B95AC4246179A9007AED02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = SmartReplyExampleObjC/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		5F5A534C1ADE670C00F81DF0 /* SmartReplyExampleObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartReplyExampleObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,8 +80,11 @@
 		5F5A53511ADE670C00F81DF0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5F5A53531ADE670C00F81DF0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5F5A53541ADE670C00F81DF0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5F5A53791ADE67D500F81DF0 /* SmartReplyExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartReplyExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F5A53791ADE67D500F81DF0 /* SmartReplyExampleObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartReplyExampleObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F5A537D1ADE67D500F81DF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8E5EFE6ABC17F356CAA03B0D /* Pods-SmartReplyExampleObjC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartReplyExampleObjC.release.xcconfig"; path = "Target Support Files/Pods-SmartReplyExampleObjC/Pods-SmartReplyExampleObjC.release.xcconfig"; sourceTree = "<group>"; };
+		B2BCF3A108F88A5A5A3D64D6 /* Pods_SmartReplyExampleObjC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartReplyExampleObjC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0BA98B1FEA6F0C6FCD01B8A /* Pods-SmartReplyExampleObjC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartReplyExampleObjC.debug.xcconfig"; path = "Target Support Files/Pods-SmartReplyExampleObjC/Pods-SmartReplyExampleObjC.debug.xcconfig"; sourceTree = "<group>"; };
 		EF6DB4CA1CDD60F700319C08 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EF6DB4D01CDD610200319C08 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		EF6DB4D31CDD610200319C08 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -108,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38D17A83586B27CF2AFD5E43 /* Pods_SmartReplyExampleObjC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA8D09E3DB3C0115CBE60ACC /* Pods_SmartReplyExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +168,7 @@
 				1036DA1A2087CA66003253C9 /* SmartReplyExampleUITests */,
 				5F5A534D1ADE670C00F81DF0 /* Products */,
 				84AF1DBB4C2C1A28DF953D03 /* Pods */,
+				B8D0299F2E44EACF05B95A01 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 			wrapsLines = 0;
@@ -166,7 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				5F5A534C1ADE670C00F81DF0 /* SmartReplyExampleObjC.app */,
-				5F5A53791ADE67D500F81DF0 /* SmartReplyExample.app */,
+				5F5A53791ADE67D500F81DF0 /* SmartReplyExampleObjC.app */,
 				1036D9FD2087CA10003253C9 /* SmartReplyExampleObjCTests.xctest */,
 				1036DA0B2087CA25003253C9 /* SmartReplyExampleObjCUITests.xctest */,
 				1036DA192087CA66003253C9 /* SmartReplyExampleUITests.xctest */,
@@ -216,8 +227,21 @@
 		84AF1DBB4C2C1A28DF953D03 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				1857C48FD965DFDFD8C34A2A /* Pods-SmartReplyExample.debug.xcconfig */,
+				338395679CAA75E997AD7434 /* Pods-SmartReplyExample.release.xcconfig */,
+				E0BA98B1FEA6F0C6FCD01B8A /* Pods-SmartReplyExampleObjC.debug.xcconfig */,
+				8E5EFE6ABC17F356CAA03B0D /* Pods-SmartReplyExampleObjC.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B8D0299F2E44EACF05B95A01 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18135AE308331315EA976309 /* Pods_SmartReplyExample.framework */,
+				B2BCF3A108F88A5A5A3D64D6 /* Pods_SmartReplyExampleObjC.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,13 +301,16 @@
 			productReference = 1036DA192087CA66003253C9 /* SmartReplyExampleUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		5F5A534B1ADE670C00F81DF0 /* SmartReplyExample */ = {
+		5F5A534B1ADE670C00F81DF0 /* SmartReplyExampleObjC */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F5A536F1ADE670C00F81DF0 /* Build configuration list for PBXNativeTarget "SmartReplyExampleObjC" */;
 			buildPhases = (
+				34CD3AAD841CD4722A405913 /* [CP] Check Pods Manifest.lock */,
 				5F5A53481ADE670C00F81DF0 /* Sources */,
 				5F5A53491ADE670C00F81DF0 /* Frameworks */,
 				5F5A534A1ADE670C00F81DF0 /* Resources */,
+				E6A6887A6F3AE06A4CAE855E /* [CP] Embed Pods Frameworks */,
+				4E513152D79ECDDE49CC024E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -298,10 +325,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F5A53991ADE67D500F81DF0 /* Build configuration list for PBXNativeTarget "SmartReplyExample" */;
 			buildPhases = (
+				55A90120E9FEA3578389BFE0 /* [CP] Check Pods Manifest.lock */,
 				5F5A53751ADE67D500F81DF0 /* Sources */,
 				5F5A53761ADE67D500F81DF0 /* Frameworks */,
 				5F5A53771ADE67D500F81DF0 /* Resources */,
 				10111604221B796200F5BF7E /* ShellScript */,
+				22CB61DC628A73DADD9EF323 /* [CP] Embed Pods Frameworks */,
+				744F0F4F19212EB7D76B890C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -309,7 +339,7 @@
 			);
 			name = SmartReplyExample;
 			productName = UserManagementExampleSwift;
-			productReference = 5F5A53791ADE67D500F81DF0 /* SmartReplyExample.app */;
+			productReference = 5F5A53791ADE67D500F81DF0 /* SmartReplyExampleObjC.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -340,6 +370,7 @@
 					};
 					5F5A534B1ADE670C00F81DF0 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = WWXTYLGB6N;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -451,6 +482,166 @@
 			shellPath = /bin/sh;
 			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
+		22CB61DC628A73DADD9EF323 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartReplyExample/Pods-SmartReplyExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartReplyExample/Pods-SmartReplyExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		34CD3AAD841CD4722A405913 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartReplyExampleObjC-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E513152D79ECDDE49CC024E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartReplyExampleObjC/Pods-SmartReplyExampleObjC-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitSmartReply/PredictOnDeviceResource.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PredictOnDeviceResource.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartReplyExampleObjC/Pods-SmartReplyExampleObjC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55A90120E9FEA3578389BFE0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartReplyExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		744F0F4F19212EB7D76B890C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartReplyExample/Pods-SmartReplyExample-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitSmartReply/PredictOnDeviceResource.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/PredictOnDeviceResource.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartReplyExample/Pods-SmartReplyExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6A6887A6F3AE06A4CAE855E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartReplyExampleObjC/Pods-SmartReplyExampleObjC-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartReplyExampleObjC/Pods-SmartReplyExampleObjC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -555,8 +746,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.friendlypix.SmartReplyExampleObjCTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "x86_64 arm64 arm64e";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartReplyExampleObjC.app/SmartReplyExampleObjC";
+				VALID_ARCHS = "x86_64 arm64 arm64e";
 			};
 			name = Debug;
 		};
@@ -583,8 +774,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.friendlypix.SmartReplyExampleObjCTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "x86_64 arm64 arm64e";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartReplyExampleObjC.app/SmartReplyExampleObjC";
+				VALID_ARCHS = "x86_64 arm64 arm64e";
 			};
 			name = Release;
 		};
@@ -609,8 +800,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.friendlypix.SmartReplyExampleObjCUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "x86_64 arm64 arm64e";
 				TEST_TARGET_NAME = SmartReplyExampleObjC;
+				VALID_ARCHS = "x86_64 arm64 arm64e";
 			};
 			name = Debug;
 		};
@@ -808,6 +999,7 @@
 		};
 		5F5A53701ADE670C00F81DF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0BA98B1FEA6F0C6FCD01B8A /* Pods-SmartReplyExampleObjC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -815,7 +1007,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WWXTYLGB6N;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/SmartReplyExampleObjC/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -831,6 +1023,7 @@
 		};
 		5F5A53711ADE670C00F81DF0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E5EFE6ABC17F356CAA03B0D /* Pods-SmartReplyExampleObjC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -853,6 +1046,7 @@
 		};
 		5F5A53951ADE67D500F81DF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1857C48FD965DFDFD8C34A2A /* Pods-SmartReplyExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -864,7 +1058,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-D COCOAPODS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.mlkit.quickstart.SmartReplyExampleObjC;
-				PRODUCT_NAME = SmartReplyExample;
+				PRODUCT_NAME = SmartReplyExampleObjC;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -876,6 +1070,7 @@
 		};
 		5F5A53961ADE67D500F81DF0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 338395679CAA75E997AD7434 /* Pods-SmartReplyExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -885,9 +1080,8 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/SmartReplyExampleObjC/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				"OTHER_SWIFT_FLAGS[arch=*]" = "-D COCOAPODS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.mlkit.quickstart.SmartReplyExampleObjC;
-				PRODUCT_NAME = SmartReplyExample;
+				PRODUCT_NAME = SmartReplyExampleObjC;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

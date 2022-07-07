@@ -23,10 +23,6 @@ static CGFloat const rectangleViewAlpha = 0.3;
 static CGFloat const shapeViewAlpha = 0.3;
 static CGFloat const rectangleViewCornerRadius = 10.0;
 
-static NSString *const MLKCircleViewIdentifier = @"MLKit Circle View";
-static NSString *const MLKLineViewIdentifier = @"MLKit Line View";
-static NSString *const MLKRectangleViewIdentifier = @"MLKit Rectangle View";
-
 NS_ASSUME_NONNULL_BEGIN
 
 @implementation UIUtilities
@@ -43,8 +39,6 @@ NS_ASSUME_NONNULL_BEGIN
   circleView.layer.cornerRadius = radius / divisor;
   circleView.alpha = circleViewAlpha;
   circleView.backgroundColor = color;
-  circleView.isAccessibilityElement = YES;
-  circleView.accessibilityIdentifier = MLKCircleViewIdentifier;
   [view addSubview:circleView];
 }
 
@@ -72,8 +66,6 @@ NS_ASSUME_NONNULL_BEGIN
   rectangleView.layer.cornerRadius = rectangleViewCornerRadius;
   rectangleView.alpha = rectangleViewAlpha;
   rectangleView.backgroundColor = color;
-  rectangleView.isAccessibilityElement = YES;
-  rectangleView.accessibilityIdentifier = MLKRectangleViewIdentifier;
   [view addSubview:rectangleView];
 }
 
@@ -395,8 +387,6 @@ NS_ASSUME_NONNULL_BEGIN
 
   UIView *lineView = [[UIView alloc] initWithFrame:view.bounds];
   [lineView.layer addSublayer:gradientLayer];
-  lineView.isAccessibilityElement = YES;
-  lineView.accessibilityIdentifier = MLKLineViewIdentifier;
   [view addSubview:lineView];
 }
 

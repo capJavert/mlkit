@@ -34,12 +34,14 @@
 		1B76D8E123C7B01F00EBF6FC /* roses.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1B76D8D823C7ACAA00EBF6FC /* roses.jpeg */; };
 		1B76D8E223C7B01F00EBF6FC /* sunflower.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1B76D8D523C7ACA900EBF6FC /* sunflower.jpg */; };
 		1B76D8E323C7B01F00EBF6FC /* tulips.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1B76D8D623C7ACAA00EBF6FC /* tulips.jpeg */; };
+		47785FF2D2771AEE713691C5 /* Pods_AutoMLExampleObjc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7868353ADF6D30C846D64181 /* Pods_AutoMLExampleObjc.framework */; };
 		A4581F0224C2473B005237E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10B3184D22EB9C5E00E834FF /* GoogleService-Info.plist */; };
 		B217D4AB220D24CA001CE5AA /* automl_labeler_labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = B217D4A8220D24C9001CE5AA /* automl_labeler_labels.txt */; };
 		B217D4AC220D24CA001CE5AA /* automl_labeler_manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = B217D4A9220D24CA001CE5AA /* automl_labeler_manifest.json */; };
 		B217D4AD220D24CA001CE5AA /* automl_labeler_model.tflite in Resources */ = {isa = PBXBuildFile; fileRef = B217D4AA220D24CA001CE5AA /* automl_labeler_model.tflite */; };
 		BB287B3920729CE90069707A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB287B3820729CE90069707A /* AppDelegate.swift */; };
 		BB287B3E20729CE90069707A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB287B3C20729CE90069707A /* Main.storyboard */; };
+		C774CF0365E6AADB568AA2E6 /* Pods_AutoMLExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5077D3EE554AA41A09B2AC33 /* Pods_AutoMLExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +50,7 @@
 		1001E6FC20CF0C8F00445CB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10224B572087E43100A77316 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		10224B5B2087E49F00A77316 /* MLKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLKitExtensions.swift; sourceTree = "<group>"; };
-		10B3184D22EB9C5E00E834FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "AutoMLExample/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		10B3184D22EB9C5E00E834FF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		10E114E020E5CBAA0013E4A4 /* AutoMLExampleObjc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoMLExampleObjc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E114E220E5CBAA0013E4A4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		10E114E320E5CBAA0013E4A4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -66,6 +68,12 @@
 		1B76D8D723C7ACAA00EBF6FC /* daisy.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = daisy.jpeg; path = Resources/daisy.jpeg; sourceTree = "<group>"; };
 		1B76D8D823C7ACAA00EBF6FC /* roses.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = roses.jpeg; path = Resources/roses.jpeg; sourceTree = "<group>"; };
 		1B76D8D923C7ACAB00EBF6FC /* dandelion.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = dandelion.jpg; path = Resources/dandelion.jpg; sourceTree = "<group>"; };
+		2A7C8DBC3403190B5E814F00 /* Pods-AutoMLExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoMLExample.release.xcconfig"; path = "Target Support Files/Pods-AutoMLExample/Pods-AutoMLExample.release.xcconfig"; sourceTree = "<group>"; };
+		415241C038D32475BC5D9385 /* Pods-AutoMLExampleObjc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoMLExampleObjc.debug.xcconfig"; path = "Target Support Files/Pods-AutoMLExampleObjc/Pods-AutoMLExampleObjc.debug.xcconfig"; sourceTree = "<group>"; };
+		440FF4207EFB1B99B1C55A77 /* Pods-AutoMLExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoMLExample.debug.xcconfig"; path = "Target Support Files/Pods-AutoMLExample/Pods-AutoMLExample.debug.xcconfig"; sourceTree = "<group>"; };
+		5077D3EE554AA41A09B2AC33 /* Pods_AutoMLExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoMLExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66700DAC4E8C20D5DB5FEC88 /* Pods-AutoMLExampleObjc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoMLExampleObjc.release.xcconfig"; path = "Target Support Files/Pods-AutoMLExampleObjc/Pods-AutoMLExampleObjc.release.xcconfig"; sourceTree = "<group>"; };
+		7868353ADF6D30C846D64181 /* Pods_AutoMLExampleObjc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoMLExampleObjc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B217D4A8220D24C9001CE5AA /* automl_labeler_labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = automl_labeler_labels.txt; path = Resources/automl_labeler_labels.txt; sourceTree = "<group>"; };
 		B217D4A9220D24CA001CE5AA /* automl_labeler_manifest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = automl_labeler_manifest.json; path = Resources/automl_labeler_manifest.json; sourceTree = "<group>"; };
 		B217D4AA220D24CA001CE5AA /* automl_labeler_model.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; name = automl_labeler_model.tflite; path = Resources/automl_labeler_model.tflite; sourceTree = "<group>"; };
@@ -80,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47785FF2D2771AEE713691C5 /* Pods_AutoMLExampleObjc.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C774CF0365E6AADB568AA2E6 /* Pods_AutoMLExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +136,27 @@
 			path = AutoMLExampleObjc;
 			sourceTree = "<group>";
 		};
+		1AC0C5BD10C4416DEF9AD011 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				440FF4207EFB1B99B1C55A77 /* Pods-AutoMLExample.debug.xcconfig */,
+				2A7C8DBC3403190B5E814F00 /* Pods-AutoMLExample.release.xcconfig */,
+				415241C038D32475BC5D9385 /* Pods-AutoMLExampleObjc.debug.xcconfig */,
+				66700DAC4E8C20D5DB5FEC88 /* Pods-AutoMLExampleObjc.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		67E35156E79DADA38DED3CDE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5077D3EE554AA41A09B2AC33 /* Pods_AutoMLExample.framework */,
+				7868353ADF6D30C846D64181 /* Pods_AutoMLExampleObjc.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BB287B2C20729CE90069707A = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +166,8 @@
 				BB287B3720729CE90069707A /* AutoMLExample */,
 				10E114E120E5CBAA0013E4A4 /* AutoMLExampleObjc */,
 				BB287B3620729CE90069707A /* Products */,
+				1AC0C5BD10C4416DEF9AD011 /* Pods */,
+				67E35156E79DADA38DED3CDE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,9 +209,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 10E1150F20E5CBAE0013E4A4 /* Build configuration list for PBXNativeTarget "AutoMLExampleObjc" */;
 			buildPhases = (
+				720304E3E46E0391DD679366 /* [CP] Check Pods Manifest.lock */,
 				10E114DC20E5CBAA0013E4A4 /* Sources */,
 				10E114DD20E5CBAA0013E4A4 /* Frameworks */,
 				10E114DE20E5CBAA0013E4A4 /* Resources */,
+				666A87473295F86D444CD3B7 /* [CP] Embed Pods Frameworks */,
+				571E05DA1377851EA9430C3F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,9 +229,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB287B4720729CE90069707A /* Build configuration list for PBXNativeTarget "AutoMLExample" */;
 			buildPhases = (
+				5380EE078ED097DCA0F8CEC0 /* [CP] Check Pods Manifest.lock */,
 				BB287B3120729CE90069707A /* Sources */,
 				BB287B3220729CE90069707A /* Frameworks */,
 				BB287B3320729CE90069707A /* Resources */,
+				362869ECA473D74AC83E2315 /* [CP] Embed Pods Frameworks */,
+				D0267FAD0815CF3A05E27BC4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -285,6 +324,161 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		362869ECA473D74AC83E2315 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AutoMLExample/Pods-AutoMLExample-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AutoMLExample/Pods-AutoMLExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5380EE078ED097DCA0F8CEC0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AutoMLExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		571E05DA1377851EA9430C3F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AutoMLExampleObjc/Pods-AutoMLExampleObjc-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitObjectDetectionCommon/MLKitObjectDetectionCommonResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MLKitObjectDetectionCommonResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AutoMLExampleObjc/Pods-AutoMLExampleObjc-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		666A87473295F86D444CD3B7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AutoMLExampleObjc/Pods-AutoMLExampleObjc-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AutoMLExampleObjc/Pods-AutoMLExampleObjc-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		720304E3E46E0391DD679366 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AutoMLExampleObjc-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0267FAD0815CF3A05E27BC4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AutoMLExample/Pods-AutoMLExample-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MLKitObjectDetectionCommon/MLKitObjectDetectionCommonResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MLKitObjectDetectionCommonResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AutoMLExample/Pods-AutoMLExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		10E114DC20E5CBAA0013E4A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -327,6 +521,7 @@
 /* Begin XCBuildConfiguration section */
 		10E1150920E5CBAE0013E4A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 415241C038D32475BC5D9385 /* Pods-AutoMLExampleObjc.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -342,6 +537,7 @@
 		};
 		10E1150A20E5CBAE0013E4A4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66700DAC4E8C20D5DB5FEC88 /* Pods-AutoMLExampleObjc.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -475,10 +671,11 @@
 		};
 		BB287B4820729CE90069707A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 440FF4207EFB1B99B1C55A77 /* Pods-AutoMLExample.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WWXTYLGB6N;
 				ENABLE_BITCODE = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -502,7 +699,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AutoMLExample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.google.firebase.quickstart.AutoMLExample;
+				PRODUCT_BUNDLE_IDENTIFIER = website.kickass.AutoMLExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -514,16 +711,17 @@
 		};
 		BB287B4920729CE90069707A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A7C8DBC3403190B5E814F00 /* Pods-AutoMLExample.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WWXTYLGB6N;
 				ENABLE_BITCODE = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = "$(SRCROOT)/AutoMLExample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.google.firebase.quickstart.AutoMLExample;
+				PRODUCT_BUNDLE_IDENTIFIER = website.kickass.AutoMLExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

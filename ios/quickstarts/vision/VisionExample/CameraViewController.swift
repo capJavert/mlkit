@@ -18,17 +18,15 @@ import AVFoundation
 import CoreVideo
 import MLImage
 import MLKit
+import SwiftyJSON
+import SocketIO
 
 @objc(CameraViewController)
 class CameraViewController: UIViewController {
   private let detectors: [Detector] = [
+    .onDeviceBarcode,
     .onDeviceFace,
     .onDeviceText,
-    .onDeviceTextChinese,
-    .onDeviceTextDevanagari,
-    .onDeviceTextJapanese,
-    .onDeviceTextKorean,
-    .onDeviceBarcode,
     .onDeviceImageLabel,
     .onDeviceImageLabelsCustom,
     .onDeviceObjectProminentNoClassifier,
@@ -44,7 +42,7 @@ class CameraViewController: UIViewController {
     .segmentationSelfie,
   ]
 
-  private var currentDetector: Detector = .onDeviceFace
+  private var currentDetector: Detector = .onDeviceBarcode
   private var isUsingFrontCamera = true
   private var previewLayer: AVCaptureVideoPreviewLayer!
   private lazy var captureSession = AVCaptureSession()
@@ -92,6 +90,14 @@ class CameraViewController: UIViewController {
     setUpAnnotationOverlayView()
     setUpCaptureSessionOutput()
     setUpCaptureSessionInput()
+      
+      manager.defaultSocket.on(clientEvent: .connect) {data, ack in
+          print("peder socket connected")
+      }
+      manager.defaultSocket.on(clientEvent: .error) {data, ack in
+          print("peder error", data)
+      }
+      manager.defaultSocket.connect()
   }
 
   override func viewDidAppear(_ animated: Bool) {
@@ -117,6 +123,21 @@ class CameraViewController: UIViewController {
   @IBAction func selectDetector(_ sender: Any) {
     presentDetectorsAlertController()
   }
+    
+    func shareJSON() {
+        print("peder", self.poses.count)
+      
+        if !self.poses.isEmpty {
+            let jsonData = JSON(self.poses)
+            
+            let activityController = UIActivityViewController(activityItems: [jsonData.rawString(options: []) ?? "[]"], applicationActivities: nil)
+            self.present(activityController, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func shareJSONAction(_ sender: Any) {
+        self.shareJSON()
+    }
 
   @IBAction func switchCamera(_ sender: Any) {
     isUsingFrontCamera = !isUsingFrontCamera
@@ -133,12 +154,18 @@ class CameraViewController: UIViewController {
 
     // Create a barcode scanner.
     let barcodeScanner = BarcodeScanner.barcodeScanner(options: barcodeOptions)
-    var barcodes: [Barcode] = []
-    var scanningError: Error?
+    var barcodes: [Barcode]
     do {
       barcodes = try barcodeScanner.results(in: image)
     } catch let error {
-      scanningError = error
+      print("Failed to scan barcodes with error: \(error.localizedDescription).")
+      self.updatePreviewOverlayViewWithLastFrame()
+      return
+    }
+    self.updatePreviewOverlayViewWithLastFrame()
+    guard !barcodes.isEmpty else {
+      print("Barcode scanner returrned no results.")
+      return
     }
     weak var weakSelf = self
     DispatchQueue.main.sync {
@@ -146,16 +173,13 @@ class CameraViewController: UIViewController {
         print("Self is nil!")
         return
       }
-      strongSelf.updatePreviewOverlayViewWithLastFrame()
-
-      if let scanningError = scanningError {
-        print("Failed to scan barcodes with error: \(scanningError.localizedDescription).")
-        return
-      }
-      guard !barcodes.isEmpty else {
-        print("Barcode scanner returrned no results.")
-        return
-      }
+        
+        if let barcodeToOpen = barcodes.last {
+            if barcodeToOpen.displayValue?.count == 8 {
+                UIApplication.shared.open(URL(string: "https://www.buycott.com/upc/"+barcodeToOpen.displayValue!)!)
+            }
+        }
+        
       for barcode in barcodes {
         let normalizedRect = CGRect(
           x: barcode.frame.origin.x / width,
@@ -186,15 +210,21 @@ class CameraViewController: UIViewController {
     let options = FaceDetectorOptions()
     options.landmarkMode = .none
     options.contourMode = .all
-    options.classificationMode = .none
+    options.classificationMode = .all
     options.performanceMode = .fast
     let faceDetector = FaceDetector.faceDetector(options: options)
-    var faces: [Face] = []
-    var detectionError: Error?
+    var faces: [Face]
     do {
       faces = try faceDetector.results(in: image)
     } catch let error {
-      detectionError = error
+      print("Failed to detect faces with error: \(error.localizedDescription).")
+      self.updatePreviewOverlayViewWithLastFrame()
+      return
+    }
+    self.updatePreviewOverlayViewWithLastFrame()
+    guard !faces.isEmpty else {
+      print("On-Device face detector returned no results.")
+      return
     }
     weak var weakSelf = self
     DispatchQueue.main.sync {
@@ -202,16 +232,22 @@ class CameraViewController: UIViewController {
         print("Self is nil!")
         return
       }
-      strongSelf.updatePreviewOverlayViewWithLastFrame()
-      if let detectionError = detectionError {
-        print("Failed to detect faces with error: \(detectionError.localizedDescription).")
-        return
-      }
-      guard !faces.isEmpty else {
-        print("On-Device face detector returned no results.")
-        return
-      }
+        
+        if let faceLast = faces.last {
+            let payload = [
+                "smilingProbability": faceLast.smilingProbability,
+                "hasSmilingProbability": faceLast.hasSmilingProbability,
+                "leftEyeOpenProbability": faceLast.leftEyeOpenProbability,
+                "hasLeftEyeOpenProbability": faceLast.hasLeftEyeOpenProbability,
+                "rightEyeOpenProbability": faceLast.rightEyeOpenProbability,
+                "hasRightEyeOpenProbability": faceLast.hasRightEyeOpenProbability,
+            ] as [String : Any]
 
+            throttle.throttle {
+                self.manager.defaultSocket.emit("face", payload)
+            }
+        }
+        
       for face in faces {
         let normalizedRect = CGRect(
           x: face.frame.origin.x / width,
@@ -231,32 +267,50 @@ class CameraViewController: UIViewController {
       }
     }
   }
+    
+    var poses: Array<Array<Dictionary<String, Any>>> = []
+    let manager = SocketManager(socketURL: URL(string: "http://kickass.ngrok.io")!, config: [.log(false), .compress])
+    let throttle = Throttle(minimumDelay: 0.5)
 
   private func detectPose(in image: MLImage, width: CGFloat, height: CGFloat) {
     if let poseDetector = self.poseDetector {
-      var poses: [Pose] = []
-      var detectionError: Error?
+      var poses: [Pose]
       do {
         poses = try poseDetector.results(in: image)
       } catch let error {
-        detectionError = error
+        print("Failed to detect poses with error: \(error.localizedDescription).")
+        self.updatePreviewOverlayViewWithLastFrame()
+        return
       }
+      self.updatePreviewOverlayViewWithLastFrame()
+      guard !poses.isEmpty else {
+        print("Pose detector returned no results.")
+        return
+      }
+        
+        let lastPose = poses.last
+
+        if let landmarks = lastPose?.landmarks {
+            var points:  Array<Dictionary<String, Any>> = []
+            
+            for landmark in landmarks {
+                points.append([
+                  "type": landmark.type.rawValue,
+                  "x": landmark.position.x,
+                  "y": landmark.position.y,
+                  "z": landmark.position.z
+                ])
+            }
+            
+            self.poses.append(points)
+        }
+        
       weak var weakSelf = self
       DispatchQueue.main.sync {
         guard let strongSelf = weakSelf else {
           print("Self is nil!")
           return
         }
-        strongSelf.updatePreviewOverlayViewWithLastFrame()
-        if let detectionError = detectionError {
-          print("Failed to detect poses with error: \(detectionError.localizedDescription).")
-          return
-        }
-        guard !poses.isEmpty else {
-          print("Pose detector returned no results.")
-          return
-        }
-
         // Pose detected. Currently, only single person detection is supported.
         poses.forEach { pose in
           let poseOverlayView = UIUtilities.createPoseOverlayView(
@@ -279,12 +333,13 @@ class CameraViewController: UIViewController {
     guard let segmenter = self.segmenter else {
       return
     }
-    var mask: SegmentationMask? = nil
-    var segmentationError: Error?
+    var mask: SegmentationMask
     do {
       mask = try segmenter.results(in: image)
     } catch let error {
-      segmentationError = error
+      print("Failed to perform segmentation with error: \(error.localizedDescription).")
+      self.updatePreviewOverlayViewWithLastFrame()
+      return
     }
     weak var weakSelf = self
     DispatchQueue.main.sync {
@@ -294,15 +349,6 @@ class CameraViewController: UIViewController {
       }
       strongSelf.removeDetectionAnnotations()
 
-      if let segmentationError = segmentationError {
-        print(
-          "Failed to perform segmentation with error: \(segmentationError.localizedDescription).")
-        return
-      }
-      guard let mask = mask else {
-        print("Segmenter returned empty mask.")
-        return
-      }
       guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
         print("Failed to get image buffer from sample buffer.")
         return
@@ -314,6 +360,7 @@ class CameraViewController: UIViewController {
         foregroundColor: nil)
       strongSelf.updatePreviewOverlayViewWithImageBuffer(imageBuffer)
     }
+
   }
 
   private func recognizeTextOnDevice(
@@ -331,28 +378,20 @@ class CameraViewController: UIViewController {
     } else {
       options = TextRecognizerOptions.init()
     }
-
-    var recognizedText: Text?
-    var detectionError: Error?
+    var recognizedText: Text
     do {
       recognizedText = try TextRecognizer.textRecognizer(options: options)
         .results(in: image)
     } catch let error {
-      detectionError = error
+      print("Failed to recognize text with error: \(error.localizedDescription).")
+      self.updatePreviewOverlayViewWithLastFrame()
+      return
     }
+    self.updatePreviewOverlayViewWithLastFrame()
     weak var weakSelf = self
     DispatchQueue.main.sync {
       guard let strongSelf = weakSelf else {
         print("Self is nil!")
-        return
-      }
-      strongSelf.updatePreviewOverlayViewWithLastFrame()
-      if let detectionError = detectionError {
-        print("Failed to recognize text with error: \(detectionError.localizedDescription).")
-        return
-      }
-      guard let recognizedText = recognizedText else {
-        print("Text recognition returned no results.")
         return
       }
 
@@ -427,32 +466,37 @@ class CameraViewController: UIViewController {
     }
     options.confidenceThreshold = NSNumber(floatLiteral: Constant.labelConfidenceThreshold)
     let onDeviceLabeler = ImageLabeler.imageLabeler(options: options)
-    let labels: [ImageLabel]
-    var labelingError: Error?
-    var resultsText: String? = nil
+    var labels: [ImageLabel]
     do {
       labels = try onDeviceLabeler.results(in: visionImage)
-      resultsText = labels.map { label -> String in
-        return "Label: \(label.text), Confidence: \(label.confidence), Index: \(label.index)"
-      }.joined(separator: "\n")
-
     } catch let error {
-      labelingError = error
+      let errorString = error.localizedDescription
+      print("On-Device label detection failed with error: \(errorString)")
+      self.updatePreviewOverlayViewWithLastFrame()
+      return
     }
+     labels.sort {
+          return $0.confidence > $1.confidence
+      }
+      
+//      if (!labels.isEmpty) {
+//          labels = [labels.first!]
+//      }
+      
+    let resultsText = labels.map { label -> String in
+      return "Label: \(label.text), Confidence: \(label.confidence), Index: \(label.index)"
+    }.joined(separator: "\n")
+
+    self.updatePreviewOverlayViewWithLastFrame()
+    guard resultsText.count != 0 else { return }
+
     weak var weakSelf = self
     DispatchQueue.main.sync {
       guard let strongSelf = weakSelf else {
         print("Self is nil!")
         return
       }
-      strongSelf.updatePreviewOverlayViewWithLastFrame()
-      if let labelingError = labelingError {
-        print("Image labeling failed with error: \(labelingError.localizedDescription)")
-        return
-      }
-      guard let resultsText = resultsText else { return }
-      guard resultsText.count > 0 else { return }
-
+      let frame = strongSelf.view.frame
       let normalizedRect = CGRect(
         x: Constant.imageLabelResultFrameX,
         y: Constant.imageLabelResultFrameY,
@@ -483,28 +527,24 @@ class CameraViewController: UIViewController {
     options: CommonObjectDetectorOptions
   ) {
     let detector = ObjectDetector.objectDetector(options: options)
-    var objects: [Object] = []
-    var detectionError: Error? = nil
+    var objects: [Object]
     do {
       objects = try detector.results(in: image)
     } catch let error {
-      detectionError = error
+      print("Failed to detect objects with error: \(error.localizedDescription).")
+      self.updatePreviewOverlayViewWithLastFrame()
+      return
+    }
+    self.updatePreviewOverlayViewWithLastFrame()
+    guard !objects.isEmpty else {
+      print("On-Device object detector returned no results.")
+      return
     }
 
     weak var weakSelf = self
     DispatchQueue.main.sync {
       guard let strongSelf = weakSelf else {
         print("Self is nil!")
-        return
-      }
-      strongSelf.self.updatePreviewOverlayViewWithLastFrame()
-      if let detectionError = detectionError {
-        print("Failed to detect objects with error: \(detectionError.localizedDescription).")
-        return
-
-      }
-      guard !objects.isEmpty else {
-        print("On-Device object detector returned no results.")
         return
       }
       for object in objects {
@@ -690,13 +730,21 @@ class CameraViewController: UIViewController {
   }
 
   private func updatePreviewOverlayViewWithLastFrame() {
-    guard let lastFrame = lastFrame,
-      let imageBuffer = CMSampleBufferGetImageBuffer(lastFrame)
-    else {
-      return
+    weak var weakSelf = self
+    DispatchQueue.main.sync {
+      guard let strongSelf = weakSelf else {
+        print("Self is nil!")
+        return
+      }
+
+      guard let lastFrame = lastFrame,
+        let imageBuffer = CMSampleBufferGetImageBuffer(lastFrame)
+      else {
+        return
+      }
+      strongSelf.updatePreviewOverlayViewWithImageBuffer(imageBuffer)
+      strongSelf.removeDetectionAnnotations()
     }
-    self.updatePreviewOverlayViewWithImageBuffer(imageBuffer)
-    self.removeDetectionAnnotations()
   }
 
   private func updatePreviewOverlayViewWithImageBuffer(_ imageBuffer: CVImageBuffer?) {
@@ -1092,4 +1140,133 @@ private enum Constant {
   static let imageLabelResultFrameWidth = 0.5
   static let imageLabelResultFrameHeight = 0.8
   static let segmentationMaskAlpha: CGFloat = 0.5
+}
+
+public class Throttle {
+    // MARK: - PROPERTY
+    /// Setup with these values to control the throttle behave
+    /// - minimumDelay >= 0.5 second is suggested
+    public private(set) var minimumDelay: TimeInterval
+    public private(set) var workingQueue: DispatchQueue
+
+    /// lock when dispatch job to execution
+    private var executeLock = NSLock()
+
+    /// These value controls throttle behavior
+    public private(set) var lastExecute: Date?
+    public private(set) var lastRequestWasCanceled: Bool = false
+    public private(set) var scheduled: Bool = false
+
+    /// Lock when setting jobs, required by thread safe design
+    private var _assignmentLock = NSLock()
+    private var _assignment: (() -> Void)?
+    public private(set) var assignment: (() -> Void)? {
+        set {
+            _assignmentLock.lock()
+            defer { _assignmentLock.unlock() }
+            _assignment = newValue
+        }
+        get {
+            _assignmentLock.lock()
+            defer { _assignmentLock.unlock() }
+            return _assignment
+        }
+    }
+
+    // MARK: - INIT
+    /// Create a throttle
+    /// - Parameters:
+    ///   - minimumDelay: in second
+    ///   - queue: the queue that job will executed on, default to main
+    public init(minimumDelay delay: TimeInterval,
+                queue: DispatchQueue = DispatchQueue.main)
+    {
+        minimumDelay = delay
+        workingQueue = queue
+
+        #if DEBUG
+            if minimumDelay < 0.5 {
+                // we suggest minimumDelay to be at least 0.5 second
+                debugPrint("[SwiftThrottle] "
+                    + "minimumDelay(\(minimumDelay) less then 0.5s will be inaccurate"
+                    + ", last callback not guaranteed")
+            }
+        #endif
+    }
+
+    // MARK: - API
+    /// Update property minimumDelay
+    /// - Parameter interval: in second
+    public func updateMinimumDelay(interval: Double) {
+        executeLock.lock()
+        minimumDelay = interval
+        executeLock.unlock()
+    }
+
+    /// Assign job to throttle
+    /// - Parameter job: call block
+    public func throttle(job: (() -> Void)?) {
+        realThrottle(job: job, useAssignment: false)
+    }
+
+    // MARK: - BACKEND
+    /// Check nothing but execute
+    /// - Parameter capturedJob: block to execute
+    private func releaseExec(capturedJob: @escaping (() -> Void)) {
+        lastExecute = Date()
+        workingQueue.async {
+            capturedJob()
+        }
+    }
+
+    /// Throttle is working here
+    /// - Parameters:
+    ///   - job: block that was required to execute
+    ///   - useAssignment: shall we overwrite assigned job?
+    private func realThrottle(job: (() -> Void)?, useAssignment: Bool) {
+        // lock down every thing when resigning job
+        executeLock.lock()
+        defer { self.executeLock.unlock() }
+
+        // if called from rescheduled job, cancel job overwrite
+        var capturedJobDecision: (() -> Void)?
+        if !useAssignment {
+            // resign job every time calling from user
+            assignment = job
+            capturedJobDecision = job
+        } else {
+            capturedJobDecision = assignment
+        }
+        guard let capturedJob = capturedJobDecision else { return }
+
+        // MARK: LOCK BEGIN
+        if let lastExec = lastExecute {
+            // executed before, value negative
+            let timeBetween = -lastExec.timeIntervalSinceNow
+
+            if timeBetween < minimumDelay {
+                // The throttle will be reprogrammed once for future execution
+                lastRequestWasCanceled = true
+                if !scheduled {
+                    scheduled = true
+                    let dispatchTime = Double(minimumDelay - timeBetween + 0.01)
+                    // Preventing trigger failures
+                    // This is where the inaccuracy comes from
+                    workingQueue.asyncAfter(deadline: .now() + dispatchTime) {
+                        self.realThrottle(job: nil, useAssignment: true)
+                        self.scheduled = false
+                    }
+                }
+            } else {
+                // Throttle release to execution
+                releaseExec(capturedJob: capturedJob)
+            }
+        }
+        else // never called before, release to execution
+        {
+            releaseExec(capturedJob: capturedJob)
+        }
+
+        // MARK: LOCK END
+    }
 }
